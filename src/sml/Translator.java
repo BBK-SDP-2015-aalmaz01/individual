@@ -86,7 +86,7 @@ public class Translator {
 		String ins = scan();
         String className = "sml." + ins.substring(0,1).toUpperCase() + ins.substring(1) + "Instruction";
         try {
-            Constructor baseConstructor = Class.forName(className).getConstructor();
+            Constructor baseConstructor = Class.forName(className).getConstructors()[1];
             int noOfParam = baseConstructor.getParameterCount();
             if (noOfParam > 3) {
                 r = scanInt();
@@ -102,7 +102,7 @@ public class Translator {
                 s1 = scanInt();
                 return (Instruction) baseConstructor.newInstance(label, jumpLabel, s1);
             }
-        }catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+        }catch (ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
         }
 
