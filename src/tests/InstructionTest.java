@@ -83,4 +83,11 @@ public class InstructionTest {
         actual = m.getRegisters().getRegister(9);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void TestBnz() {
+        int expected = 0;
+        int actual = m.getRegisters().getRegister(10);
+        assertEquals(expected, actual);
+    }
 }
