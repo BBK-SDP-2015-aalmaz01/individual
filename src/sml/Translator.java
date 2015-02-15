@@ -89,19 +89,20 @@ public class Translator {
             Class instructionClass = Class.forName(className);
             Constructor baseConstructor = instructionClass.getConstructors()[1];
             int noOfParam = baseConstructor.getParameterCount();
+            System.out.println(noOfParam);
             if (noOfParam > 3) {
                 r = scanInt();
                 s1 = scanInt();
                 s2 = scanInt();
                 return (Instruction) baseConstructor.newInstance(label, r, s1, s2);
-            }else if (!className.contains("Bnz")){
-                r = scanInt();
+            }else if (noOfParam > 2){
+                Object param;
+                className.contains("Bnz") ? param = scan() : param = scanInt();
                 s1 = scanInt();
-                return (Instruction) baseConstructor.newInstance(label, r, s1);
+                return (Instruction) baseConstructor.newInstance(label, param, s1);
             }else {
-                String jumpLabel = scan();
                 s1 = scanInt();
-                return (Instruction) baseConstructor.newInstance(label, jumpLabel, s1);
+                return (Instruction) baseConstructor.newInstance(label, s1);
             }
         }catch (ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
