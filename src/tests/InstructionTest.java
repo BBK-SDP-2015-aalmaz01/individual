@@ -76,11 +76,11 @@ public class InstructionTest {
     @Test
     public void TestDiv() {
         int expected = 5;
-        int actual = m.getRegisters().getRegister(7);
+        int actual = m.getRegisters().getRegister(8);
         assertEquals(expected, actual);
 
         expected = 6;
-        actual = m.getRegisters().getRegister(8);
+        actual = m.getRegisters().getRegister(9);
         assertEquals(expected, actual);
     }
 }
