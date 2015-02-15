@@ -92,7 +92,15 @@ public class Translator {
                 r = scanInt();
                 s1 = scanInt();
                 s2 = scanInt();
-                return (Instruction) baseConstructor.newInstance(r, s1, s2);
+                return (Instruction) baseConstructor.newInstance(label, r, s1, s2);
+            }else if (!label.equals("bnz")){
+                r = scanInt();
+                s1 = scanInt();
+                return (Instruction) baseConstructor.newInstance(label, r, s1);
+            }else {
+                String jumpLabel = scan();
+                s1 = scanInt();
+                return (Instruction) baseConstructor.newInstance(label, jumpLabel, s1);
             }
         }catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
