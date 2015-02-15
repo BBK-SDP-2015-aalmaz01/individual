@@ -51,4 +51,15 @@ public class InstructionTest {
         actual = m.getRegisters().getRegister(3);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void TestSub() {
+        int expected = 6;
+        int actual = m.getRegisters().getRegister(4);
+        assertEquals(expected, actual);
+
+        expected = 1;
+        actual = m.getRegisters().getRegister(5);
+        assertEquals(expected, actual);
+    }
 }
