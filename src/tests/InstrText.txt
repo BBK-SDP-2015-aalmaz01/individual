@@ -8,3 +8,4 @@ L6 mul 6 0 1
 L7 mul 7 6 5
 L8 div 8 7 1
 L9 div 9 7 0
+L10 out 0
