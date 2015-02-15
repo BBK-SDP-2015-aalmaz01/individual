@@ -84,24 +84,38 @@ public class Translator {
 			return null;
 
 		String ins = scan();
-        String className = "sml." + ins.substring(0,1).toUpperCase() + ins.substring(1) + "Instruction";
-        try {
-            Class instructionClass = Class.forName(className);
-            Constructor baseConstructor = instructionClass.getConstructors()[1];
-            int noOfParam = baseConstructor.getParameterCount();
-            if (noOfParam > 3) {
+        switch (ins) {
+            case "add":
                 r = scanInt();
                 s1 = scanInt();
                 s2 = scanInt();
-                return (Instruction) baseConstructor.newInstance(label, r, s1, s2);
-            }else if (noOfParam > 2){
-                return (Instruction) baseConstructor.newInstance(label, scanInt(), className.contains("Bnz") ? scan() : scanInt());
-            }else {
+                return new AddInstruction(label, r, s1, s2);
+            case "lin":
+                r = scanInt();
                 s1 = scanInt();
-                return (Instruction) baseConstructor.newInstance(label, s1);
-            }
-        }catch (ClassNotFoundException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-            e.printStackTrace();
+                return new LinInstruction(label, r, s1);
+            case "sub":
+                r = scanInt();
+                s1 = scanInt();
+                s2 = scanInt();
+                return new SubInstruction(label, r, s1, s2);
+            case "mul":
+                r = scanInt();
+                s1 = scanInt();
+                s2 = scanInt();
+                return new MulInstruction(label, r, s1, s2);
+            case "div":
+                r = scanInt();
+                s1 = scanInt();
+                s2 = scanInt();
+                return new DivInstruction(label, r, s1, s2);
+            case "out":
+                r = scanInt();
+                return new OutInstruction(label, r);
+            case "bnz":
+                s1 = scanInt();
+                String jumpLabel = scan();
+                return new BnzInstruction(label, s1, jumpLabel);
         }
 
 		// You will have to write code here for the other instructions.
