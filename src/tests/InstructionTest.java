@@ -62,4 +62,14 @@ public class InstructionTest {
         actual = m.getRegisters().getRegister(5);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void TestMul() {
+        int expected = 30;
+        int actual = m.getRegisters().getRegister(6);
+        assertEquals(expected, actual);
+
+        actual = m.getRegisters().getRegister(7);
+        assertEquals(expected, actual);
+    }
 }
