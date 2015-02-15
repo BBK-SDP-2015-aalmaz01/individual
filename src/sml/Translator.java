@@ -86,14 +86,15 @@ public class Translator {
 		String ins = scan();
         String className = "sml." + ins.substring(0,1).toUpperCase() + ins.substring(1) + "Instruction";
         try {
-            Constructor baseConstructor = Class.forName(className).getConstructors()[1];
+            Class instructionClass = Class.forName(className);
+            Constructor baseConstructor = instructionClass.getConstructors()[1];
             int noOfParam = baseConstructor.getParameterCount();
             if (noOfParam > 3) {
                 r = scanInt();
                 s1 = scanInt();
                 s2 = scanInt();
                 return (Instruction) baseConstructor.newInstance(label, r, s1, s2);
-            }else if (!label.equals("bnz")){
+            }else if (!className.contains("Bnz")){
                 r = scanInt();
                 s1 = scanInt();
                 return (Instruction) baseConstructor.newInstance(label, r, s1);
