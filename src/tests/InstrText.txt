@@ -9,6 +9,6 @@ L7 mul 7 6 5
 L8 div 8 7 1
 L9 div 9 7 0
 L10 lin 10 5
-L11 sub 10 10 5
-L12 out 10
+L11 out 10
+L12 sub 10 10 5
 L13 bnz 10 L11
