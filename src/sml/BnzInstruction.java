@@ -29,4 +29,9 @@ public class BnzInstruction extends Instruction {
 
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + "jump to label " + jumpLabel + " if register " + register + " is not 0";
+    }
 }
