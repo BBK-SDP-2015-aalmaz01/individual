@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import sml.Machine;
@@ -29,8 +30,19 @@ public class InstructionTest {
         System.out.println(m.getRegisters() + ".");
     }
 
+    @After
+    public void CleanUp() {
+        t = null;
+    }
+
     @Test
     public void TestLin() {
+        int expected = 5;
+        int actual = m.getRegisters().getRegister(1);
+        assertEquals(expected, actual);
 
+        expected = 6;
+        actual = m.getRegisters().getRegister(2);
+        assertEquals(expected, actual);
     }
 }
