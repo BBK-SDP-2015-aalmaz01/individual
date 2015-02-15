@@ -43,12 +43,8 @@ public class InstructionTest {
 
     @Test
     public void TestAdd() {
-        int expected = 11;
+        int expected = 17;
         int actual = m.getRegisters().getRegister(0);
-        assertEquals(expected, actual);
-
-        expected = 17;
-        actual = m.getRegisters().getRegister(0);
         assertEquals(expected, actual);
     }
 }
