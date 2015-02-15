@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 
 public class InstructionTest {
     private Machine m = new Machine();
+    //Created a txt file called InstrText contains all the operations that are to be tested
     private String fileName = ("tests" + File.separator + "InstrText.txt");
 
     @Before

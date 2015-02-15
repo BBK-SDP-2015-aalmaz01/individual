@@ -1,9 +1,9 @@
 package sml;
 
 /**
- * This class ....
- * 
- * @author someone
+ * This class stores a given value into a register.
+ * Note that both these must be integers
+ *
  */
 
 public class LinInstruction extends Instruction {

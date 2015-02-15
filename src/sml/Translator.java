@@ -110,8 +110,6 @@ public class Translator {
             e.printStackTrace();
         }
 
-		// You will have to write code here for the other instructions.
-
 		return null;
 	}
 

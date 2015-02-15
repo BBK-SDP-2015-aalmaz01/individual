@@ -1,9 +1,10 @@
 package sml;
 
 /**
- * This class ....
+ * This class adds the contents of two registers, 'op1' and 'op2'. The result of this operation is then stored in the register called 'result'.
+ * Note that op1, op2 and result are all integers
  * 
- * @author someone
+ *
  */
 
 public class AddInstruction extends Instruction {

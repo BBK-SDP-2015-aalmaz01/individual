@@ -1,6 +1,8 @@
 package sml;
 
 /**
+ * This class allows a jump from the current label to a specified label, provided that the contents of the specified register
+ * are not equal to 0.
  * Created by Ahmed on 2/15/2015.
  */
 public class BnzInstruction extends Instruction {

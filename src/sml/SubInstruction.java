@@ -1,6 +1,8 @@
 package sml;
 
 /**
+ * This class subtracts the contents of two registers, 'op1' and 'op2'. It subtracts op1 from op2 and stores the result in the register 'result'
+ * Note that op1, op2 and result are all integers
  * Created by Ahmed on 2/15/2015.
  */
 public class SubInstruction extends Instruction {

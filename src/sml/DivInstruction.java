@@ -1,6 +1,7 @@
 package sml;
 
 /**
+ * This class divides the content of register 'op1' by the content of register 'op2'. The result is then stored in the register 'result'
  * Created by Ahmed on 2/15/2015.
  */
 public class DivInstruction extends Instruction {

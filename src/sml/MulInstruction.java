@@ -1,6 +1,8 @@
 package sml;
 
 /**
+ * This class multiplies the contents of two registers, 'op1' and 'op2'. The product of this is then stored in the register 'result'.
+ * Note that op1, op2 and result are all integers
  * Created by Ahmed on 2/15/2015.
  */
 public class MulInstruction extends Instruction {

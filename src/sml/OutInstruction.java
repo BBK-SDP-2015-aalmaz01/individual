@@ -1,6 +1,7 @@
 package sml;
 
 /**
+ * This class prints the contents of the specified register
  * Created by Ahmed on 2/15/2015.
  */
 public class OutInstruction extends Instruction {
