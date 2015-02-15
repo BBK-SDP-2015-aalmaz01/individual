@@ -33,11 +33,11 @@ public class InstructionTest {
     @Test
     public void TestLin() {
         int expected = 5;
-        int actual = m.getRegisters().getRegister(1);
+        int actual = m.getRegisters().getRegister(0);
         assertEquals(expected, actual);
 
         expected = 6;
-        actual = m.getRegisters().getRegister(2);
+        actual = m.getRegisters().getRegister(1);
         assertEquals(expected, actual);
     }
 }
