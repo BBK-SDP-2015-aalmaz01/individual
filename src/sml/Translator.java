@@ -2,6 +2,7 @@ package sml;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -83,7 +84,18 @@ public class Translator {
 
 		String ins = scan();
         String className = "sml." + ins.substring(0,1).toUpperCase() + ins.substring(1) + "Instruction";
-
+        try {
+            Constructor baseConstructor = Class.forName(className).getConstructor();
+            int noOfParam = baseConstructor.getParameterCount();
+            if (noOfParam > 3) {
+                r = scanInt();
+                s1 = scanInt();
+                s2 = scanInt();
+                return (Instruction)
+            }
+        }catch (NoSuchMethodException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 		// You will have to write code here for the other instructions.
 
