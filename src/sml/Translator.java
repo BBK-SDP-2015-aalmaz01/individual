@@ -95,7 +95,7 @@ public class Translator {
                 s2 = scanInt();
                 return (Instruction) baseConstructor.newInstance(label, r, s1, s2);
             }else if (noOfParam > 2){
-                return (Instruction) baseConstructor.newInstance(label, className.contains("Bnz") ? scan() : scanInt(), scanInt());
+                return (Instruction) baseConstructor.newInstance(label, scanInt(), className.contains("Bnz") ? scan() : scanInt());
             }else {
                 s1 = scanInt();
                 return (Instruction) baseConstructor.newInstance(label, s1);
