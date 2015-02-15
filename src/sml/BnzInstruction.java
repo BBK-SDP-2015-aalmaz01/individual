@@ -11,10 +11,10 @@ public class BnzInstruction extends Instruction {
         super(label, op);
     }
 
-    public BnzInstruction(String label, String jumpLabel, int register) {
+    public BnzInstruction(String label, int register, String jumpLabel) {
         this(label,"bnz");
-        this.jumpLabel = jumpLabel;
         this.register = register;
+        this.jumpLabel = jumpLabel;
     }
 
     @Override
